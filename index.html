@@ -1,52 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Portafolio - Hector Diaz</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Héctor Díaz Fernández</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <a href="#main" class="skip-to-content">Saltar al contenido principal</a>
+
   <header>
     <nav>
-      <h1>Hector Diaz</h1>
+      <a href="#" class="logo">Héctor Díaz F.</a>
       <ul>
+        <li><a href="#hero">Inicio</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2>¡Hola, soy Hector Diaz 👋</h2>
-      <p>Desarrollador(a) - Portafolio 2025</p>
+  <main id="main">
+
+    <section class="hero" id="hero">
+      <h1>Hola, soy Héctor Díaz Fernández</h1>
+      <p>[Tu subtítulo profesional. Ej: Desarrollador de Software enfocado en soluciones backend y web.]</p>
     </section>
 
     <section id="proyectos">
-      <h2>Proyectos</h2>
+      <h2>Mis Proyectos</h2>
+      
       <ul class="proyectos-lista">
-        <li><a href="#">Proyecto A</a></li>
-        <li><a href="#">Proyecto B</a></li>
-        <li><a href="#">Proyecto C</a></li>
+        
+        <li>
+          <img src="img/proyecto-isw.jpg" alt="Vista previa del Proyecto ISW 2025">
+          <div class="proyecto-contenido">
+            <h3>Proyecto ISW 2025-1</h3>
+            <ul class="tags">
+              <li>Python</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <p>[Añade una breve descripción aquí. ¿Qué hace este proyecto? ¿Cuál fue tu rol?]</p>
+            <a href="https://github.com/Seba-IECI/Proyecto-ISW-2025-1-" class="proyecto-enlace" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+          </div>
+        </li>
+
+        <li>
+          <img src="img/proyecto-ing-software.jpg" alt="Vista previa del Proyecto Ingeniería de Software">
+          <div class="proyecto-contenido">
+            <h3>Proyecto Ingeniería de Software</h3>
+            <ul class="tags">
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+            <p>[Añade una breve descripción aquí. ¿Qué problema resolvía? ¿Qué aprendiste?]</p>
+            <a href="https://github.com/Seba-IECI/Proyecto-Ingenieria-de-Software" class="proyecto-enlace" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+          </div>
+        </li>
+
+        <li>
+          <img src="img/proyecto-asambleas.jpg" alt="Vista previa del Software de Asambleas">
+          <div class="proyecto-contenido">
+            <h3>Software Asambleas</h3>
+            <ul class="tags">
+              <li>C#</li>
+              <li>ASP.NET</li>
+              <li>JavaScript</li>
+              <li>CSS</li>
+            </ul>
+            <p>[Añade una breve descripción aquí. Este proyecto usa C#, ¡destácalo! Explica su arquitectura.]</p>
+            <a href="https://github.com/Handradus/SoftwareAsambleas" class="proyecto-enlace" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
+          </div>
+        </li>
+
       </ul>
     </section>
 
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>Soy desarrollador con pasión por crear soluciones web modernas, enfocadas en la simplicidad y el buen diseño.</p>
+    <section id="contacto" class="hero">
+      <h2>Hablemos</h2>
+      <p>Estoy buscando activamente nuevas oportunidades y me encantaría conectar. ¡Hablemos!</p>
+      <a href="mailto:hectorbastian2003@gmail.com" class="proyecto-enlace">Envíame un email</a>
     </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>📧 Email: <a href="mailto:hectorbastian2003@gmail.com">hectorbastian2003@gmail.com</a></p>
-      <p>🌐 GitHub: <a href="https://github.com/hector280703" target="_blank">github.com/hector280703</a></p>
-    </section>
   </main>
 
   <footer>
-    <p>© 2025 Hector Diaz. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Héctor Díaz Fernández. Todos los derechos reservados.</p>
   </footer>
+
 </body>
 </html>

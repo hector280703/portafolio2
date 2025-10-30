@@ -1,107 +1,308 @@
-/* Reset */
+/* --- 1. CONFIGURACIÓN GLOBAL (VARIABLES) --- */
+:root {
+  /* Paleta de Colores (Basada en tu CSS original) */
+  --color-primario: #0077cc;
+  --color-primario-oscuro: #005fa3;
+  --color-secundario: #00bcd4;
+  --color-texto: #333333;
+  --color-texto-claro: #ffffff;
+  --color-fondo: #f9f9f9;
+  --color-fondo-tarjeta: #ffffff;
+  --color-borde-sutil: #eeeeee;
+
+  /* Tipografía */
+  --font-principal: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-titulos: 'Manrope', system-ui, sans-serif;
+
+  /* Espaciado */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 4rem;
+
+  /* Otros (Respetando tu max-width original) */
+  --max-width: 900px;
+  --border-radius: 12px;
+  --shadow-suave: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-hover: 0 8px 24px rgba(0,0,0,0.1);
+  --transicion-rapida: 0.2s ease-in-out;
+}
+
+/* --- 2. RESET Y ESTILOS BASE --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilo general */
-body {
-  font-family: system-ui, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  color: #333;
-  background: #f9f9f9;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Encabezado y menú */
+body {
+  font-family: var(--font-principal);
+  line-height: 1.6;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  text-rendering: optimizeSpeed;
+}
+
+img, picture {
+  display: block;
+  max-width: 100%;
+}
+
+/* --- 3. ACCESIBILIDAD (A11Y) --- */
+.skip-to-content {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-to-content:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  padding: var(--spacing-sm);
+  background: var(--color-primario-oscuro);
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--color-primario-oscuro);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+
+/* --- 4. ENCABEZADO Y NAVEGACIÓN (MOBILE-FIRST) --- */
 header {
-  background: #0077cc;
-  color: white;
-  padding: 1rem;
+  background: var(--color-primario);
+  color: var(--color-texto-claro);
+  padding-block: var(--spacing-sm);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header .logo {
+  font-family: var(--font-titulos);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-texto-claro);
 }
 
 header nav {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--spacing-md);
+  
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* Mobile-First: apilado verticalmente */
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
 }
 
 header nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%; /* Ocupa todo el ancho en móvil */
 }
 
 header nav a {
-  color: white;
+  color: var(--color-texto-claro);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  display: block; /* Facilita el clic en móviles */
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 8px;
+  transition: background var(--transicion-rapida);
 }
 
 header nav a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  background: var(--color-primario-oscuro);
 }
 
-/* Secciones */
+/* Media Query para Desktop (a 768px) */
+@media (min-width: 768px) {
+  header nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header nav ul {
+    flex-direction: row;
+    width: auto;
+    gap: var(--spacing-sm);
+  }
+}
+
+/* --- 5. CONTENIDO PRINCIPAL --- */
 main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--spacing-md);
+  margin-top: var(--spacing-lg);
 }
 
 section {
-  margin-bottom: 3rem;
+  margin-bottom: var(--spacing-xxl);
 }
 
-h1, h2 {
-  margin-bottom: 1rem;
+h1, h2, h3 {
+  font-family: var(--font-titulos);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
 }
 
-/* Hero */
+/* Tipografía Fluida */
+h1 {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw + 1rem, 2.5rem);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--color-primario);
+}
+
+/* --- 6. SECCIÓN HERO --- */
 .hero {
   text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(135deg, #0077cc, #00bcd4);
-  color: white;
-  border-radius: 10px;
-  margin-bottom: 2rem;
+  padding: clamp(var(--spacing-xl), 10vw, var(--spacing-xxl)) var(--spacing-md);
+  /* Tu gradiente original */
+  background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+  color: var(--color-texto-claro);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-xxl);
 }
 
-/* Proyectos */
+.hero h1 {
+  color: var(--color-texto-claro);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 60ch;
+  margin-inline: auto;
+  opacity: 0.9;
+}
+
+/* --- 7. PROYECTOS (TARJETAS MEJORADAS) --- */
 .proyectos-lista {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  /* Tu grid original, pero con un minmax más grande */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
 }
 
 .proyectos-lista li {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
+  background: var(--color-fondo-tarjeta);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-suave);
+  transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.proyectos-lista a {
+.proyectos-lista li:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.proyectos-lista img {
+  /* Imagen responsive 16:9 */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+  border-bottom: 1px solid var(--color-borde-sutil);
+}
+
+.proyecto-contenido {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ocupa el espacio disponible */
+}
+
+.proyecto-contenido p {
+  margin-bottom: var(--spacing-lg);
+  flex-grow: 1; /* Empuja el botón/enlace hacia abajo */
+}
+
+/* Estilo de "Píldora" para las tecnologías */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  background: var(--color-fondo);
+  color: var(--color-primario);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  /* Resetea efectos de la tarjeta padre */
+  transform: none;
+  box-shadow: none;
+}
+
+/* Botón para el enlace del proyecto */
+.proyecto-enlace {
+  display: inline-block;
+  background: var(--color-primario);
+  color: var(--color-texto-claro);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: 50px;
   text-decoration: none;
-  color: #0077cc;
   font-weight: bold;
+  text-align: center;
+  transition: background var(--transicion-rapida);
 }
 
-.proyectos-lista a:hover {
-  color: #005fa3;
+.proyecto-enlace:hover {
+  background: var(--color-primario-oscuro);
+  color: var(--color-texto-claro);
+  text-decoration: none;
 }
 
-/* Footer */
+/* --- 8. FOOTER --- */
 footer {
   text-align: center;
-  padding: 1rem;
-  background: #0077cc;
-  color: white;
-  margin-top: 2rem;
-  border-radius: 10px 10px 0 0;
+  padding: var(--spacing-xl);
+  /* Tu color original de header */
+  background: var(--color-primario);
+  color: var(--color-texto-claro);
+  margin-top: var(--spacing-xxl);
+  /* Quité el border-radius de tu footer original 
+     para un look más limpio y estándar */
+}
+
+footer p {
+  opacity: 0.9;
 }
