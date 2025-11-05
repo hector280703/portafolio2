@@ -1,0 +1,8 @@
+services:
+  portafolio:
+    build: .
+    container_name: portafolio-hector
+    ports:
+      - "8080:80"
+    restart: always
+

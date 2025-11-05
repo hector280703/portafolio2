@@ -1,22 +1,12 @@
-# Etapa 1: Construcción
-FROM node:18 AS build
-WORKDIR /app
-
-# Copia solo los archivos necesarios primero
-COPY package*.json ./
-
-# Instala dependencias
-RUN npm install
-
-# Copia el resto del proyecto
-COPY . .
-
-# Compila el proyecto
-RUN npm run build
-
-# Etapa 2: Servidor Nginx
+# Usamos una imagen ligera de Nginx
 FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
+
+# Copiamos todos los archivos del sitio al directorio que Nginx sirve
+COPY . /usr/share/nginx/html
+
+# Exponemos el puerto 80
 EXPOSE 80
+
+# Iniciamos Nginx en modo foreground
 CMD ["nginx", "-g", "daemon off;"]
 

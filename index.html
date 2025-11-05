@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -20,6 +21,8 @@
       <a href="#" class="logo">Héctor Díaz F.</a>
       <ul>
         <li><a href="#hero">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre Mi</a></li>
+        <li><a href="#educacion">Educación</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
@@ -29,17 +32,93 @@
   <main id="main">
 
     <section class="hero" id="hero">
-      <h1>Hola, soy Héctor Díaz Fernández</h1>
-      <p>Desarrollador de Software enfocado en soluciones backend y fronted</p>
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-greeting">👋 ¡Hola! Soy</span>
+          <h1>HÉCTOR BASTIÁN DÍAZ FERNÁNDEZ</h1>
+          <p class="hero-description">Estudiante de Ingeniería de Ejecución en Computación e Informática | Desarrollador Full-Stack</p>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Calle 1 #33, Población El Pinar, Laraquete, Arauco, Región del Biobío</p>
+            <p><i class="fas fa-phone"></i> +56 9 4207 1196</p>
+            <p><i class="fas fa-envelope"></i> hectorbastian2003@gmail.com</p>
+          </div>
+          <div class="hero-cta">
+            <a href="#proyectos" class="btn btn-primary"><i class="fas fa-code"></i> Ver Proyectos</a>
+            <a href="#contacto" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Contactar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="about-section">
+      <div class="section-content">
+        <h2><i class="fas fa-user"></i> Objetivo Profesional</h2>
+        <p class="about-description">
+          Soy estudiante de Ingeniería de Ejecución en Computación e Informática con interés en el desarrollo de software full-stack. 
+          Busco seguir adquiriendo experiencia práctica en el desarrollo de aplicaciones web, integrando tanto el frontend como el backend, 
+          y contribuir con soluciones tecnológicas eficientes y de calidad en entornos colaborativos.
+        </p>
+      </div>
+    </section>
+
+    <section id="educacion" class="education-section">
+      <div class="section-content">
+        <h2><i class="fas fa-graduation-cap"></i> Educación</h2>
+        
+        <div class="education-item">
+          <h3>Ingeniería de Ejecución en Computación e Informática</h3>
+          <p class="institution">Universidad del Bío-Bío</p>
+          <p class="period">2022 – Actualidad</p>
+          <p class="description">
+            Formación orientada al desarrollo de software, con especialización en tecnologías web full-stack
+            utilizando JavaScript, HTML y CSS, además de fundamentos sólidos en bases de datos y programación backend.
+          </p>
+        </div>
+
+        <div class="education-item">
+          <h3>Educación Básica y Media</h3>
+          <p class="institution">Liceo San Francisco de Asís de Arauco</p>
+          <p class="period">Completada</p>
+        </div>
+
+        <h2 class="mt-xl"><i class="fas fa-briefcase"></i> Experiencia Laboral</h2>
+        
+        <div class="education-item">
+          <h3>Práctica Profesional</h3>
+          <p class="institution">Caminando Otro Sendero - Concepción</p>
+          <p class="period">2025</p>
+          <ul class="experience-list">
+            <li>Desarrollo de una página de presentación institucional utilizando WordPress.</li>
+            <li>Implementación, junto a un compañero, de un software de manejo de base de datos para la organización.</li>
+            <li>Colaboración activa en la planificación y ejecución de tareas del proyecto.</li>
+          </ul>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skills-column">
+            <h3><i class="fas fa-laptop-code"></i> Habilidades Técnicas</h3>
+            <p>Desarrollo full-stack con JavaScript, maquetación y estilización con HTML y CSS, backend y bases de datos.</p>
+          </div>
+          <div class="skills-column">
+            <h3><i class="fas fa-users"></i> Habilidades Blandas</h3>
+            <p>Trabajo en equipo, comunicación efectiva y participación activa en entornos colaborativos.</p>
+          </div>
+        </div>
+
+        <div class="achievements">
+          <h3><i class="fas fa-trophy"></i> Logros</h3>
+          <p>Realización exitosa de la primera práctica profesional en 2025, desarrollando proyectos web funcionales y de impacto real para una organización local.</p>
+        </div>
+      </div>
     </section>
 
     <section id="proyectos">
-      <h2>Mis Proyectos</h2>
+      <h2><i class="fas fa-folder-open"></i> Mis Proyectos</h2>
       
       <ul class="proyectos-lista">
         
         <li>
-          <img src="img/proyecto-isw.jpg" alt="Vista previa del Proyecto ISW 2025">
+          <img src="https://concepto.de/wp-content/uploads/2015/08/informatica-1-e1590711788135.jpg" alt="Vista previa del Proyecto ISW 2025">
           <div class="proyecto-contenido">
             <h3>Proyecto ISW 2025-1</h3>
             <ul class="tags">
@@ -48,13 +127,13 @@
               <li>CSS</li>
               <li>JavaScript</li>
             </ul>
-            <p>El desarrollo de este pryecto se baso en la creacio de un sistema de gestion para un condominio </p>
+            <p>El desarrollo de este proyecto se baso en la creacion de un sistema de gestion para un condominio </p>
             <a href="https://github.com/Seba-IECI/Proyecto-ISW-2025-1-" class="proyecto-enlace" target="_blank" rel="noopener noreferrer">Ver en GitHub</a>
           </div>
         </li>
 
         <li>
-          <img src="img/proyecto-ing-software.jpg" alt="Vista previa del Proyecto Ingeniería de Software">
+          <img src="https://www.excelsior.edu/wp-content/uploads/2025/01/computer-programming-vs-computer-science-image_blog.jpg" alt="Vista previa del Proyecto Ingeniería de Software">
           <div class="proyecto-contenido">
             <h3>Proyecto Ingeniería de Software</h3>
             <ul class="tags">
@@ -69,7 +148,7 @@
         </li>
 
         <li>
-          <img src="img/proyecto-asambleas.jpg" alt="Vista previa del Software de Asambleas">
+          <img src="https://saluddata.com/wp-content/uploads/2023/11/que-es-la-informatica.webp" alt="Vista previa del Software de Asambleas">
           <div class="proyecto-contenido">
             <h3>Software Asambleas</h3>
             <ul class="tags">
@@ -86,10 +165,24 @@
       </ul>
     </section>
 
-    <section id="contacto" class="hero">
-      <h2>Hablemos</h2>
-      <p>Estoy buscando activamente nuevas oportunidades y me encantaría conectar. ¡Hablemos!</p>
-      <a href="mailto:hectorbastian2003@gmail.com" class="proyecto-enlace">Envíame un email</a>
+    <section id="contacto" class="contact-section">
+      <div class="contact-content">
+        <h2><i class="fas fa-envelope"></i> Hablemos</h2>
+        <p>Estoy buscando activamente nuevas oportunidades y me encantaría conectar. ¡Hablemos!</p>
+        <div class="contact-links">
+          <a href="mailto:hectorbastian2003@gmail.com" class="contact-btn">
+            <i class="fas fa-envelope"></i> Envíame un email
+          </a>
+          <div class="social-links">
+            <a href="https://github.com/hector280703" class="social-btn" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/héctor-bastián-díaz-fernández-a9b2b1340" class="social-btn" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
